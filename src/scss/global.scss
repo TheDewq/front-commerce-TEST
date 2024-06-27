@@ -1,0 +1,31 @@
+@import "./index.scss";
+@import "./colors.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+* {
+    color: $text-primary
+}
+body {
+    margin: 0;
+    background-color: $bg-primary;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    color: $text-primary;
+}
+p{
+    margin: 0;
+    color: $text-primary;
+}
+a{
+    margin: 0;
+    color: $text-primary;
+
+    &:hover{
+        color: $text-secondary;
+    }
+
+}
+
+
