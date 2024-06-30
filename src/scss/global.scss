@@ -9,10 +9,12 @@ body {
     margin: 0;
     background-color: $bg-primary;
 }
-
+.storeTitle{
+    color: $primary;
+}
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
-    color: $text-primary;
+    color: black;
 }
 p{
     margin: 0;

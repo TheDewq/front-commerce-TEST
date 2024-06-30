@@ -1,0 +1,25 @@
+
+@import "../../scss/colors.scss";
+.container{
+    height: 100vh;
+    max-height: 100vh;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.center{
+    width: 100%;
+    background-color: $focused-box;
+    align-self:self-end;
+    border-radius: 16px;
+    padding: 2%;
+
+}
+.form{
+
+}
