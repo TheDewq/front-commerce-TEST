@@ -1,11 +1,11 @@
 import JoinLayout from "@/layout/join/join-layout"
-
+import RegisterForm from "@/auth/register"
 export default ()=>{
     return(
         <JoinLayout>
-            <h2>
-                registrarse
-            </h2>
+            <RegisterForm>
+                
+            </RegisterForm>
         </JoinLayout>
     )
 }

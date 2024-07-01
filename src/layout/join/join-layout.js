@@ -5,15 +5,12 @@ export default function JoinLayout(props) {
     return (
         <>
             <div className={styles.container}>
-                <h1 className="storeTitle">
+                <h1 className={styles.storeTitle}>
                     Zephyra
                 </h1>
                 <div className={styles.center}>
-
-                        <CloseBtn/>
                     <div className={styles.form}>
                         {props.children}
-                        <InputText name="test" placeholder="nomms"/>
                     </div>
                 </div>
             </div>

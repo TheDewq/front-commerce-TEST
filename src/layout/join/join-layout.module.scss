@@ -13,13 +13,17 @@
 }
 
 .center{
-    width: 100%;
+
+    width: 20rem;
     background-color: $focused-box;
-    align-self:self-end;
     border-radius: 16px;
-    padding: 2%;
+    padding: 1rem;
+    box-shadow: $default-shadow;
 
 }
-.form{
-
+.storeTitle{
+    position: fixed !important;
+    top: 0;
+    color: $primary;
+    margin: 2%;
 }

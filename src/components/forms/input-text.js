@@ -1,12 +1,10 @@
-import styles from "./forms.module.scss"
-
 export default function InputText(props){
     return(
         <input
-            type="text"
             name={props.name}
+            type={props.type}
             placeholder={props.placeholder}
-            className={styles.inputText}
+            className="form-control"
         >
             {props.children}
         </input>

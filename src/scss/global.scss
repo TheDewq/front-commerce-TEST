@@ -1,6 +1,16 @@
+//own imports
 @import "./index.scss";
 @import "./colors.scss";
+@import "./components/components.module.scss";
+
+
+//modificaciones de bootstrap
+@import "./bootstrap/index.scss";
+
+
+//external imports
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
 
 * {
     color: $text-primary
@@ -12,9 +22,13 @@ body {
 .storeTitle{
     color: $primary;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h4,h5,h6 {
     margin: 0;
     color: black;
+}
+h3{
+    color: gray;
+    display: inline;
 }
 p{
     margin: 0;
@@ -22,7 +36,9 @@ p{
 }
 a{
     margin: 0;
+    padding: 0;
     color: $text-primary;
+    text-decoration: none;
 
     &:hover{
         color: $text-secondary;
