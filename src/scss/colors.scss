@@ -2,8 +2,8 @@ $primary: #ff0a8d;
 $primary-hover: #c7006a ;
 $primary-active: #a3075a ;
 
-$non-important-btn: white;
-$non-important-btn-hover: #f0f0f0;
+$non-important-btn:  #181a21;
+$non-important-btn-hover:  #111318;
 $non-important-btn-active: #a3a3a3;
 
 $secondary: #0a64ff;
@@ -18,9 +18,11 @@ $text-secondary: #909090;
 $border: black;
 
 $bg-primary: #181a21;
+$background-primary: #181a21;
 
 
 $close: #ff0000;
+$danger: #ff0000;
 
 
 $focused-box: #2c2e36;
@@ -31,3 +33,7 @@ $input-bg: #181a21;
 
 //shadows
 $default-shadow: rgb(24, 25, 26) 0px 20px 30px -10px;
+
+//semanthic 
+$border-primary: gray;
+$background-secondary: #181a21;

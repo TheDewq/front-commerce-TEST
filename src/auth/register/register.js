@@ -1,14 +1,26 @@
+"use client";
+
 import { useFormik } from "formik"
 import { initialValues, validationSchema} from "./register.form"
-
+import { Form } from "semantic-ui-react"
+import {Auth} from "@/api"
 import Link from "next/link"
+
+const authCtrl = new Auth()
+
 export default function RegisterForm(props){
     const formik = useFormik({
         initialValues: initialValues(),
         validationSchema: validationSchema(),
         validateOnChange: false,
-        onSubmit: () => {
-            console.log("formulario listo")
+        onSubmit: async (formValue) => {
+            try {
+                await authCtrl.register(formValue)
+                alert("si se pudo");    
+            } catch (error) {
+                alert(error)
+            }
+            
         }
     })
     return(
@@ -20,20 +32,19 @@ export default function RegisterForm(props){
                 </h3>
             </div>
             
-            <form onSubmit={formik.handleSubmit}>
+            <Form onSubmit={formik.handleSubmit}>
+                <Form.Input type="email" name="email" placeholder="correo electronico"  value={formik.values.email} onChange={formik.handleChange} error={formik.errors.email}/>
 
-                <input type="email" name="email" placeholder="correo electronico" className="form-control mb-1 mt-1" value={formik.values.email} onChange={formik.handleChange} aria-invalid={formik.errors.email}/>
+                <Form.Input type="email" name="username" placeholder="confirmacion correo"  value={formik.values.username} onChange={formik.handleChange} error={formik.errors.username}/>
 
-                <input type="email" name="username" placeholder="confirmacion correo" className="form-control mb-1 mt-1" value={formik.values.username} onChange={formik.handleChange} aria-invalid={formik.errors.username}/>
+                <Form.Input type="password" name="password" placeholder="contraseña" value={formik.values.password} onChange={formik.handleChange} error={formik.errors.password}/>
 
-                <input type="password" name="password" placeholder="contraseña" className="form-control mb-1 mt-1" value={formik.values.password} onChange={formik.handleChange} aria-invalid={formik.errors.password}/>
-
-                <input type="password" name="confirm_password" placeholder="confirmacion contraseña" className="form-control mb-1 mt-1" value={formik.values.confirm_password} onChange={formik.handleChange} aria-invalid={formik.errors.confirm_password}/>
+                <Form.Input type="password" name="confirm_password" placeholder="confirmacion contraseña"  value={formik.values.confirm_password} onChange={formik.handleChange}  error={formik.errors.confirm_password}/>
 
                 <div className="text-center mt-3">
-                    <button className="primaryBtn">
+                    <Form.Button type="submit">
                             registrarse
-                    </button>
+                    </Form.Button>
                     <Link href="/" className="secondaryBtn ms-1">
                         Cancelar
                     </Link>
@@ -42,7 +53,7 @@ export default function RegisterForm(props){
                     
 
                 
-            </form>
+            </Form>
         </div>
     )
 }

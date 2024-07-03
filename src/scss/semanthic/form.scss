@@ -1,0 +1,14 @@
+.field .ui.input input{
+    @extend .form-control;
+    @extend .mt-2;
+    display: inline;
+}
+
+.ui.button{
+    @extend .primaryBtn;
+    @extend .m-1
+}
+
+.error.field .ui.input input{
+    border-color: red;
+}
