@@ -1,9 +1,13 @@
+import JoinLayout from "@/layout/join/join-layout";
+import Login from "@/auth/login/login";
 export default ()=>{
     return(
         <>
-            <h2>
-                inicio de sesion
-            </h2>
+            <JoinLayout>
+                <Login>
+                    
+                </Login>
+            </JoinLayout>
         </>
     )
 }

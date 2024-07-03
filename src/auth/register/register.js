@@ -45,7 +45,7 @@ export default function RegisterForm(props){
                     <Form.Button type="submit">
                             registrarse
                     </Form.Button>
-                    <Link href="/" className="secondaryBtn ms-1">
+                    <Link href="/">
                         Cancelar
                     </Link>
                 </div>
