@@ -1,8 +1,11 @@
 "use client"
 import { createContext, useState, useEffect } from "react";
-
+import {Token, User} from "@/api"
 
 export const AuthContext = createContext();
+
+const TokenCtrl = new Token();
+const UserCtrl = new User();
 
 export function AuthProvider(props){
     const { children } = props;
@@ -16,7 +19,12 @@ export function AuthProvider(props){
 
     const login = async (token) => {
         try {
-            console.log(token);
+            TokenCtrl.setToken(token);
+            const response = await UserCtrl.getMe(token);
+            setUser(response);
+            console.log("caballeros, con ustedes "+user);
+            setToken(token)
+            setLoading(false)
         } catch (error) {
             console.error(error);
             setLoading(false)
@@ -24,9 +32,9 @@ export function AuthProvider(props){
     }
 
     const data = {
-        accessTokeN : token,
+        accessToken : token,
         user,
-        login: null,
+        login,
         logout: null,
         updateUser: null
     };

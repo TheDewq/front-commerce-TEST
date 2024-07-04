@@ -22,7 +22,7 @@ export default function Login(){
                 const response = await authCtrl.login(formValue)
                 login(response.jwt);
                 console.log("form sent") 
-                console.log(response)
+                console.log()
             } catch (error) {
                 console.error(error)
             }

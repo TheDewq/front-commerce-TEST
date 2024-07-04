@@ -5,6 +5,10 @@ export const ENV ={
         AUTH: {
             REGISTER: "auth/local/register",
             LOGIN: "auth/local"
+        },
+        USER: {
+            GETME: "users/me"
         }
-    }
+    },
+    TOKEN: "token"
 }
