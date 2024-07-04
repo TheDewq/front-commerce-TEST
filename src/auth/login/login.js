@@ -5,11 +5,14 @@ import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./login.form";
 import Link  from "next/link";
 import { Auth } from "@/api";
+import { useAuth } from "@/hooks"
+import { useRouter } from "next/router";
 
 const authCtrl = new Auth()
 
 
 export default function Login(){
+    const {login} = useAuth()
     const formik = useFormik({
         initialValues: initialValues(),
         validationSchema: validationSchema(),
@@ -17,6 +20,7 @@ export default function Login(){
         onSubmit: async (formValue)=>{
             try {
                 const response = await authCtrl.login(formValue)
+                login(response.jwt);
                 console.log("form sent") 
                 console.log(response)
             } catch (error) {
