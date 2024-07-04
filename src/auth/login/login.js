@@ -1,18 +1,27 @@
 "use client"
 
-
-import {Link} from "next/link";
-import {Form} from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./login.form";
+import Link  from "next/link";
+import { Auth } from "@/api";
+
+const authCtrl = new Auth()
+
 
 export default function Login(){
     const formik = useFormik({
         initialValues: initialValues(),
         validationSchema: validationSchema(),
         validateOnChange: false,
-        onSubmit: ()=>{
-            alert("si sirve");
+        onSubmit: async (formValue)=>{
+            try {
+                const response = await authCtrl.login(formValue)
+                console.log("form sent") 
+                console.log(response)
+            } catch (error) {
+                console.error(error)
+            }
         }
     })
     return(
@@ -25,6 +34,7 @@ export default function Login(){
             <Form onSubmit={formik.handleSubmit}>
                 <Form.Group>
                     <Form.Input
+                        type="email"
                         name="identifier"
                         value={formik.values.identifier}
                         placeholder="correo electronico"
@@ -33,6 +43,7 @@ export default function Login(){
 
                     />
                     <Form.Input
+                        type="password"
                         name="password"
                         value={formik.values.password}
                         placeholder="contraseña"
@@ -48,10 +59,15 @@ export default function Login(){
                     </div>
                     
                 </Form.Group>
-                <Link href="/join/sing-up">
-                    No tienes cuenta
-                </Link>
+                <div className="text-center mt-1">
+                    <Link href="/join/sign-up">
+                        ¿No tienes cuenta?
+                    </Link>
+                </div>
+                
             </Form>
+            
+            
         </div>
     )
 }

@@ -16,7 +16,7 @@ export default function RegisterForm(props){
         onSubmit: async (formValue) => {
             try {
                 await authCtrl.register(formValue)
-                alert("si se pudo");    
+                console.log("form sent")   
             } catch (error) {
                 alert(error)
             }
@@ -45,8 +45,8 @@ export default function RegisterForm(props){
                     <Form.Button type="submit">
                             registrarse
                     </Form.Button>
-                    <Link href="/">
-                        Cancelar
+                    <Link href="/join/sign-in">
+                        Atras
                     </Link>
                 </div>
                 
