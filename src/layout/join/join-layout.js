@@ -4,10 +4,11 @@ import CloseBtn from "@/components/buttons/close-btn";
 import InputText from "@/components/forms/input-text";
 import { useAuth } from "@/hooks";
 import { useRouter } from "next/navigation";
+import { Token } from "@/api";
 export default function JoinLayout(props) {
-    const {user} = useAuth();
     const router = useRouter();
-    if(user) router.push("/");
+    const TokenCtrl = new Token();
+    if(TokenCtrl.getToken()) router.push("/");
         return (
         <>
             <div className={styles.container}>

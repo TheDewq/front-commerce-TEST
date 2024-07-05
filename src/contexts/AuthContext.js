@@ -20,7 +20,7 @@ export function AuthProvider(props){
     const login = async (token) => {
         try {
             TokenCtrl.setToken(token);
-            const response = await UserCtrl.getMe(token);
+            const response = await UserCtrl.getMe();
             setUser(response);
             console.log("caballeros, con ustedes "+user);
             setToken(token)

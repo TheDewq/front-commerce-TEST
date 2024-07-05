@@ -1,21 +1,15 @@
-import { ENV } from "@/utils";
+import { authFetch, ENV } from "@/utils";
 
 export class User{
-    async getMe(token){
+    async getMe(){
         try {
             const url = ENV.API_URL+"/"+ENV.ENDPOINTS.USER.GETME;
-            const params = {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer "+token
-                }
-            };
+            const method = "GET";
 
-            const responde = await fetch(url, params);
-            const result = await responde.json();
+            const response = await authFetch(url, method);
+            const result = await response.json();
 
-            if(responde.status !== 200) throw result;
+            if(response.status !== 200) throw result;
 
             return result;
         } catch (error) {
