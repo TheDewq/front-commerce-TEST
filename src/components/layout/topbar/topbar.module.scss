@@ -1,0 +1,27 @@
+@import "../../../scss/colors.scss";
+.topbar{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    z-index: 5;
+    background-color: $primary;
+
+}
+.center{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.right{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+.left{
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+}
