@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation";
 
 const authCtrl = new Auth()
 
-
 export default function Login(){
     const router = useRouter();
     const {login} = useAuth()

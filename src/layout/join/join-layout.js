@@ -1,14 +1,15 @@
 "use client"
 import styles from "./join-layout.module.scss";
-import CloseBtn from "@/components/buttons/close-btn";
-import InputText from "@/components/forms/input-text";
 import { useAuth } from "@/hooks";
 import { useRouter } from "next/navigation";
-import { Token } from "@/api";
 export default function JoinLayout(props) {
+    const { user } = useAuth();
     const router = useRouter();
-    const TokenCtrl = new Token();
-    if(TokenCtrl.getToken()) router.push("/");
+
+    if(user){
+        router.push("/");
+        return null;
+    } 
         return (
         <>
             <div className={styles.container}>
@@ -25,3 +26,4 @@ export default function JoinLayout(props) {
     )
         
 }
+
