@@ -10,10 +10,16 @@ export default function AccountTop(props){
     const { user } = useAuth();
     const router = useRouter();
 
+    const cart_account = 0;
+
     const goSignin = ()=>router.push("/join/sign-in");
     const goAccount = ()=>router.push("/account");
     const goCart = ()=>{
-        alert("falta implementar el carro :( quiero que sea un sidebar");
+        if(!user){
+            goSignin
+        }else{
+            alert("falta implementar el carro :( quiero que sea un sidebar");
+        }   
     }
 
     if(!user){
@@ -27,11 +33,17 @@ export default function AccountTop(props){
             <div className={styles.container}>
                 <Button icon className={styles.button} onClick={goAccount}>
                     <Image src="user-icon.png"></Image>
+                    
                 </Button>
-                <Button icon className={styles.button} onClick={goAccount}>
-                    <Image src="user-icon.png"></Image>
+                
+                <Button icon className={styles.button} onClick={goCart}>
+                {cart_account > 0 ?
+                    <div className={styles.cartCount}>
+                        <p>{cart_account}</p>
+                    </div>
+                    :<span></span>}
+                    <Image src="cart.svg"></Image>
                 </Button>
-                <Icon name="user outlined"/>
             </div>
             
             
