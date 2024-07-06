@@ -1,0 +1,13 @@
+@import "../../../scss/colors.scss";
+.button{
+    padding: 0.5rem !important;
+    @extend .secondaryBtn !optional;
+    > img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+.container{
+    background-color: $focused-box;
+    border-radius: 32px;
+}
