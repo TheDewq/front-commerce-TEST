@@ -8,6 +8,9 @@ export const ENV ={
         },
         USER: {
             GETME: "users/me"
+        },
+        CATEGORIES :{
+            GETALL: "categories"
         }
     },
     TOKEN: "token"
