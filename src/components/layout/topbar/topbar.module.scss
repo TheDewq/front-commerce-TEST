@@ -9,18 +9,12 @@
 }
 
 .right{
-    width: 70%;
     display: flex;
     justify-content: flex-end;
 }
 .left{
-    width: 30%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    
-    >h1{
-        color: $primary;
-        font-size: 2rem;
-    }
 }

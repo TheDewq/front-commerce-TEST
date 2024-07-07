@@ -3,6 +3,11 @@
     @extend .mt-2;
     display: inline;
 }
+.ui.input input{
+    @extend .form-control;
+    @extend .mt-2;
+}
+
 
 .ui.button{
     @extend .primaryBtn;

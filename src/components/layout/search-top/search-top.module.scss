@@ -1,0 +1,48 @@
+@import "../../../scss/colors.scss";
+
+.container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 0.1rem;
+    h1{
+        color: $primary;
+        font-size: 2rem;
+        margin-left: 0.3rem;
+    }
+    i{
+        color: white;
+        cursor: pointer;
+        padding: 1.33rem;
+
+        &:hover{
+            color: $primary
+        }
+        &:active{
+            color: $primary-active;
+        }
+    }
+    .inputContainer{
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box !important;
+        padding-right: 1rem;
+        
+
+        span{
+            background-color: $input-bg !important;
+            border-radius: 50px;
+            padding: 0;
+        }
+        input{
+            border-radius:  50px 0 50px 50px;
+        }
+    }
+
+    .InputDisplay{
+        display: none;
+    }
+}
+
+

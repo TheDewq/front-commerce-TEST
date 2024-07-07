@@ -9,6 +9,7 @@
 }
 .container{
     background-color: $focused-box;
+    display: flex;
     border-radius: 32px;
     padding: 0.5rem;
 }
