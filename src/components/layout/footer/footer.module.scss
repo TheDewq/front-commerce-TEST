@@ -1,0 +1,42 @@
+@import "../../../scss/colors.scss";
+
+.footer{
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    
+    .right{
+        flex: 40%;
+        display: flex;
+        justify-content: end;
+        a{
+            font-size: 2rem;
+            padding: 0.33rem;
+        }
+    }
+    .center{
+        flex: 40%;
+        ul{
+            list-style-type: none;
+        }
+    }
+    .left{
+        flex: 20%;
+        h1{
+            color: $primary !important;
+        }
+    }
+}
+.copyright{
+    background-color: black;
+    width: 100%;
+    padding-top: 1rem;
+    border-top: 1px solid gray;
+    padding: 1rem;
+
+    span{
+        color: gray;
+    }
+}

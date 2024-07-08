@@ -5,7 +5,7 @@ import { useState } from "react";
 import classNames from "classnames";
 export default function SearchTop(props){
 
-    const [search, setSearch] = useState(false)
+    const [search, setSearch] = useState(true)
     const changeSearch = () => setSearch(!search);
 
 

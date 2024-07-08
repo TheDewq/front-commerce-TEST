@@ -3,6 +3,7 @@ import { Container } from "semantic-ui-react";
 import styles from "./main-layout.module.scss";
 import TopBar from "@/components/layout/topbar/topbar";
 import SearchTop from "@/components/layout/search-top/search-top";
+import Footer from "@/components/layout/footer/footer";
 export default function MainLayout(props){
 
 
@@ -16,6 +17,7 @@ export default function MainLayout(props){
                     {isContainer ? <Container>{children}</Container> : children}
                 </div>
             </Container>
+            <Footer/>
             
         </>
     )
