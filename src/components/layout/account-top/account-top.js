@@ -10,7 +10,7 @@ export default function AccountTop(props){
     const { user } = useAuth();
     const router = useRouter();
 
-    const cart_account = 0;
+    const cart_account = 100;
 
     const goSignin = ()=>router.push("/join/sign-in");
     const goAccount = ()=>router.push("/account");
@@ -24,26 +24,15 @@ export default function AccountTop(props){
 
     if(!user){
         return(
-            <Button onClick={goSignin}>
-                Iniciar sesion
-            </Button>
+            <div className={styles.container}>
+                <i class="bi bi-box-arrow-in-right" onClick={goSignin}><span>Iniciar Sesion</span></i>
+            </div>
         )
     }else{
         return(
             <div className={styles.container}>
-                <Button icon className={styles.button} onClick={goAccount}>
-                    <Image src="user-icon.png"></Image>
-                    
-                </Button>
-                
-                <Button icon className={styles.button} onClick={goCart}>
-                {cart_account > 0 ?
-                    <div className={styles.cartCount}>
-                        <p>{cart_account}</p>
-                    </div>
-                    :<span></span>}
-                    <Image src="cart.svg"></Image>
-                </Button>
+                <i class="bi bi-cart" onClick={goCart}>{cart_account > 99 ? <span>99+</span> : cart_account > 0 ? <span>{cart_account}</span> : <span></span>}</i>
+                <i class="bi bi-person-fill" onClick={goAccount}></i>
             </div>
             
             

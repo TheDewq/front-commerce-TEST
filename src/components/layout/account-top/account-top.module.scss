@@ -1,34 +1,34 @@
 @import "../../../scss/colors.scss";
-.button{
-    padding: 0.5rem !important;
-    @extend .secondaryBtn !optional;
-    > img{
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-}
 .container{
-    background-color: $focused-box;
     display: flex;
-    border-radius: 32px;
-    padding: 0.5rem;
-    
-    button{
-        height: 1.5rem;
-        width: 2.5rem;
-    }
-}
-
-.cartCount{
-    border-radius: 32px;
-    background-color: black;
-    width: 1.70rem;
-    height: 1.70rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    > p{
-        transform: translate(0, 0.1rem);
-        color: white;
+    flex-direction: row;
+    padding: 0.1rem;
+    align-items: center;
+    i{
+        display: flex;
+        flex-direction: row;
+        color: $icon;
+        font-size: 1.65rem;
+        transition: color 0.3s ease-in, transform 0.3s ease-out;
+        margin-left: 0.5rem;
+        font-style: normal;
+        &:hover{
+            color: $icon-hover;
+            transform: scale(1.1);
+            span{
+                color: $icon-hover;
+            }
+        }
+        &:active{
+            color: $icon-active;
+            span{
+                color: $icon-active;
+            }
+        }
+        span{
+            font-size: 1rem;
+            white-space: nowrap;
+            margin-left: 0.2rem;
+        }
     }
 }
