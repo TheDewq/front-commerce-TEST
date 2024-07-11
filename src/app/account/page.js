@@ -1,6 +1,6 @@
 "use client";
 import  BasicInfo  from "@/components/account/basic-info/basic-info";
-import Tabs from "@/components/account/tabs/tabs";
+import Tabs from "@/components/account/tabs/Tabs";
 import MainLayout from "@/layout/main/main-layout";
 
 export default function Account(){
@@ -8,7 +8,8 @@ export default function Account(){
         <>
             <MainLayout>
                 <BasicInfo/>
-                <Tabs/>
+                <Tabs></Tabs>
+               
             </MainLayout>
             
         </>
