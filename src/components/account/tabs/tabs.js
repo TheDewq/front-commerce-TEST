@@ -4,6 +4,7 @@ import styles from "./tabs.module.scss";
 import { useState } from "react";
 import { useAuth } from "@/hooks";
 import { useRouter } from "next/navigation";
+import Settings from "../settings/settings";
 
 export default function Tabs(props){
     const [toggle, setToggle] = useState(0)
@@ -43,7 +44,7 @@ export default function Tabs(props){
                     <h1>direcciones</h1>
                 </div>
                 <div className={classNames({[styles.show]:toggle === 2})}>
-                    <h1>Ajustes</h1>
+                    <Settings/>
                 </div>
                 <div className={classNames({[styles.show]:toggle === 3})}>
                     <h1>indeterminado</h1>
