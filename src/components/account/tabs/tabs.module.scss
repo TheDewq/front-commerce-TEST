@@ -1,0 +1,34 @@
+@import "../../../scss/colors.scss";
+
+.renderzone{
+    div{
+        display: none;
+    }
+}
+.show{
+    display: block !important;
+}
+
+.tabs{
+    display: flex;
+    flex-direction: row;
+    div{
+        cursor: pointer;
+        padding: 1rem;
+        p{
+            color: $primary;
+            &:hover{
+                color: $primary-hover;
+            }
+            &:active{
+                color: $primary-active;
+            }
+        }
+    }
+}
+
+
+.selected{
+    border-bottom: 1px solid $primary;
+    background-color: $background-hover;
+}
