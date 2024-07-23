@@ -3,17 +3,12 @@
 @import "./colors.scss";
 @import "./components/components.module.scss";
 
-//modificaciones semanthic
-@import "./semanthic/index.scss";
-
-//modificaciones de bootstrap
-@import "./bootstrap/index.scss";
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-
 
 //external imports
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+//chakra imports
+@import "./chakra/index.scss";
 
 * {
     color: $text-primary
