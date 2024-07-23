@@ -25,7 +25,7 @@ export default function InfoTabs(props){
                 <Tab>Mis pedidos</Tab>
                 <Tab>Direcciones</Tab>
                 <Tab>Ajustes</Tab>
-                <Tab><i class="bi bi-box-arrow-right"></i></Tab>
+                <Tab onClick={fun_logout}><i class="bi bi-box-arrow-right"></i></Tab>
             </TabList>
 
             <TabPanels>
@@ -39,7 +39,6 @@ export default function InfoTabs(props){
                     <Settings/>
                 </TabPanel>
                 <TabPanel>
-                <p>three!</p>
                 </TabPanel>
             </TabPanels>
         </Tabs>

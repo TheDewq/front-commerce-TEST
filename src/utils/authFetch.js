@@ -1,6 +1,6 @@
 import { Token } from "@/api";
 
-export async function authFetch(url, method){
+export async function authFetch(url, method, params){
     const TokenCtrl = new Token();
     const token = TokenCtrl.getToken();
     console.log(token);
@@ -14,13 +14,15 @@ export async function authFetch(url, method){
         if(TokenCtrl.hasExpired(token)){
             logout();
         }else{
-            const params = {
+            const tempParams = {
                 "method": method,
                 "headers": {
-                    "Authorization": `Bearer ${token}`
-                }
+                    "Authorization": `Bearer ${token}`,
+                    ...params?.headers
+                },
+                ...params?.body
             }
-            return await fetch(url, params)
+            return await fetch(url, tempParams)
         }
     }
 }

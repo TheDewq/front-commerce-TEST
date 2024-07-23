@@ -33,7 +33,12 @@ export default function RegisterForm(props){
             </div>
             
             <Form onSubmit={formik.handleSubmit}>
-                <Form.Input type="email" name="email" placeholder="correo electronico"  value={formik.values.email} onChange={formik.handleChange} error={formik.errors.email}/>
+                <Form.Input type="email"
+                 name="email"
+                  placeholder="correo electronico"
+                    value={formik.values.email}
+                     onChange={formik.handleChange}
+                      error={formik.errors.email}/>
 
                 <Form.Input type="email" name="username" placeholder="confirmacion correo"  value={formik.values.username} onChange={formik.handleChange} error={formik.errors.username}/>
 

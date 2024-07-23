@@ -7,7 +7,8 @@ export const ENV ={
             LOGIN: "auth/local"
         },
         USER: {
-            GETME: "users/me"
+            GETME: "users/me",
+            UPDATEME: "users"
         },
         CATEGORIES :{
             GETALL: "categories"

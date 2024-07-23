@@ -1,3 +1,9 @@
 .chakra-ui-light{
     background-color: $bg-primary;
 }
+
+
+//modals
+:root{
+    --chakra-colors-white: $bg-primary;
+}
