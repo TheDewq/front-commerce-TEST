@@ -2,7 +2,7 @@
 
 import { useFormik } from "formik"
 import { initialValues, validationSchema} from "./register.form"
-import { Form } from "semantic-ui-react"
+import { Input, Button, Stack } from "@chakra-ui/react";
 import {Auth} from "@/api"
 import Link from "next/link"
 
@@ -32,33 +32,36 @@ export default function RegisterForm(props){
                 </h3>
             </div>
             
-            <Form onSubmit={formik.handleSubmit}>
-                <Form.Input type="email"
-                 name="email"
-                  placeholder="correo electronico"
-                    value={formik.values.email}
-                     onChange={formik.handleChange}
-                      error={formik.errors.email}/>
+            <form onSubmit={formik.handleSubmit}>
+                    <Stack spacing={3} textAlign="center">
+                        <Input type="email"
+                        name="email"
+                        placeholder="correo electronico"
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                            isInvalid={formik.errors.email}/>
 
-                <Form.Input type="email" name="username" placeholder="confirmacion correo"  value={formik.values.username} onChange={formik.handleChange} error={formik.errors.username}/>
+                        <Input type="email" name="username" placeholder="confirmacion correo"  value={formik.values.username} onChange={formik.handleChange} isInvalid={formik.errors.username}/>
 
-                <Form.Input type="password" name="password" placeholder="contraseña" value={formik.values.password} onChange={formik.handleChange} error={formik.errors.password}/>
+                        <Input type="password" name="password" placeholder="contraseña" value={formik.values.password} onChange={formik.handleChange} isInvalid={formik.errors.password}/>
 
-                <Form.Input type="password" name="confirm_password" placeholder="confirmacion contraseña"  value={formik.values.confirm_password} onChange={formik.handleChange}  error={formik.errors.confirm_password}/>
+                        <Input type="password" name="confirm_password" placeholder="confirmacion contraseña"  value={formik.values.confirm_password} onChange={formik.handleChange}  isInvalid={formik.errors.confirm_password}/>
+                    
+                    
+                        <Button type="submit">
+                                registrarse
+                        </Button>
+                        <Link href="/join/sign-in">
+                            Atras
+                        </Link>
+                    </Stack>
 
-                <div className="text-center mt-3">
-                    <Form.Button type="submit">
-                            registrarse
-                    </Form.Button>
-                    <Link href="/join/sign-in">
-                        Atras
-                    </Link>
-                </div>
+                    
                 
                     
 
                 
-            </Form>
+            </form>
         </div>
     )
 }

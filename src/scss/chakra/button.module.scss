@@ -1,0 +1,30 @@
+.chakra-button{
+    align-items: center !important;
+background-color: $primary !important;
+border: 0 !important;
+border-radius: 100px !important;
+box-sizing: border-box !important;
+color: #ffffff !important;
+cursor: pointer !important;
+display: inline-flex !important;
+font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif !important;
+font-size: 16px !important;
+font-weight: 600 !important;
+justify-content: center !important;
+line-height: 20px !important;
+max-width: 480px !important;
+min-height: 40px !important;
+min-width: 0px !important;
+overflow: hidden !important;
+padding: 0px !important;
+padding-left: 20px !important;
+padding-right: 20px !important;
+text-align: center !important;
+touch-action: manipulation !important;
+transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s !important;
+user-select: none !important;
+-webkit-user-select: none !important;
+vertical-align: middle !important;
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset !important;
+
+}

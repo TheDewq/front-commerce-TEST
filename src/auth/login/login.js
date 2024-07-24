@@ -1,12 +1,12 @@
 "use client"
 
-import { Form } from "semantic-ui-react";
 import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./login.form";
 import Link  from "next/link";
 import { Auth } from "@/api";
 import { useAuth } from "@/hooks"
 import { useRouter } from "next/navigation";
+import { Input, Button, Stack } from "@chakra-ui/react";
 
 const authCtrl = new Auth()
 
@@ -35,41 +35,42 @@ export default function Login(){
                     Iniciar Sesion
                 </h3>
             </div>
-            <Form onSubmit={formik.handleSubmit}>
-                <Form.Group>
-                    <Form.Input
+            <form onSubmit={formik.handleSubmit}>
+                <Stack spacing={3}>
+                    <Input
                         type="email"
                         name="identifier"
                         value={formik.values.identifier}
                         placeholder="correo electronico"
                         onChange={formik.handleChange}
-                        error={formik.errors.identifier}
+                        isInvalid={formik.errors.identifier}
 
                     />
-                    <Form.Input
+                    <Input
                         type="password"
                         name="password"
                         value={formik.values.password}
                         placeholder="contraseña"
                         onChange={formik.handleChange}
-                        error={formik.errors.password}
+                        isInvalid={formik.errors.password}
                     />
                     <div className="text-center mt-2">
-                    <Form.Button
+                    <Button
                             type="submit"
                         >
                             Iniciar Sesion
-                        </Form.Button>
+                        </Button>
                     </div>
+                </Stack>
                     
-                </Form.Group>
+                
                 <div className="text-center mt-1">
                     <Link href="/join/sign-up">
                         ¿No tienes cuenta?
                     </Link>
                 </div>
                 
-            </Form>
+            </form>
             
             
         </div>

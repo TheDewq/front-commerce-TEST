@@ -3,6 +3,7 @@ import styles from "./search-top.module.scss";
 import { Input } from "semantic-ui-react";
 import { useState } from "react";
 import classNames from "classnames";
+import Link from "next/link";
 export default function SearchTop(props){
 
     const [search, setSearch] = useState(true)
@@ -11,9 +12,11 @@ export default function SearchTop(props){
 
     return(
         <div className={styles.container}>
+            <Link href="/">
             <h1>
                 Zephyra
             </h1>
+            </Link>
             <i class="bi bi-search" onClick={changeSearch}></i>
             <div className={styles.inputContainer}>
             <div class={classNames("input-group", {[styles.InputDisplay]:search})}>
