@@ -1,0 +1,6 @@
+.chakra-tabs__tab{
+    &[aria-selected="true"]{
+        color: $primary !important;
+    }
+    
+}

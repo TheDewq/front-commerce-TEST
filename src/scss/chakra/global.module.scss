@@ -4,6 +4,15 @@
 
 
 //modals
-:root{
-    --chakra-colors-white: $bg-primary;
+.chakra-modal__content{
+    background-color: $bg-primary !important;
+}
+
+//form components
+
+.chakra-input{
+    &:focus-visible{
+        border-color: $primary !important;
+        box-shadow: 0 0 0 1px $primary !important;
+    }
 }
