@@ -31,10 +31,11 @@ export default function PasswordChange(){
         validateOnChange: false,
         onSubmit: async (formValue) => {
             try {
-                await userCtrl.updateMe({"password":formValue.password}, user.id)
+                console.log(user.id)
+                await userCtrl.updateMe({"password" : formValue.password}, user.id)
                 alert("password changed")   
             } catch (error) {
-                alert(error)
+                console.log(error)
             }
             
         }

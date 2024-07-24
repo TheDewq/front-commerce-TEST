@@ -14,14 +14,17 @@ export async function authFetch(url, method, params){
         if(TokenCtrl.hasExpired(token)){
             logout();
         }else{
+            console.log(params?.headers)
+            console.log(params?.body)
             const tempParams = {
+                ...params,
                 "method": method,
                 "headers": {
                     "Authorization": `Bearer ${token}`,
                     ...params?.headers
                 },
-                ...params?.body
             }
+            console.log(tempParams)
             return await fetch(url, tempParams)
         }
     }

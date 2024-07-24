@@ -21,11 +21,12 @@ export class User{
     async updateMe(data,id){
         try {
             const url = ENV.API_URL+"/"+ENV.ENDPOINTS.USER.UPDATEME+"/"+id;
+            console.log("la url es "+url)
             const method = "PUT";
             const params = {
                 method,
                 headers: {
-                    "Content-Type" : "application/json",
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
             }    
