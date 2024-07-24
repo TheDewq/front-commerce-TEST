@@ -12,6 +12,9 @@ export const ENV ={
         },
         CATEGORIES :{
             GETALL: "categories"
+        },
+        ADDRESS :{
+            GETALL: "addresses"
         }
     },
     TOKEN: "token"

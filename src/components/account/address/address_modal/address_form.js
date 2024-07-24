@@ -1,9 +1,12 @@
 import { Box, Button, FormHelperText, FormLabel, Input, InputGroup, Spacer } from "@chakra-ui/react";
 import { initialValues, validationSchema } from "./address_form.form";
 import { useFormik } from "formik";
+import { Address as ApiAddress } from "@/api/address";
+import { useAuth } from "@/hooks";
 
 export default function AddressForm(props){
     const {Close} = props;
+    const { user } = useAuth();
 
     const formik = useFormik({
         initialValues: initialValues(),
@@ -11,7 +14,9 @@ export default function AddressForm(props){
         validateOnChange: false,
         onSubmit: async (formValue)=>{
             try {
-                console.log(formValue);
+                const dirCtrl = new ApiAddress()
+                console.log(await dirCtrl.createOne(user.id, formValue))
+                console.log("direccion enviada");
                 
             } catch (error) {
                 console.error(error)
