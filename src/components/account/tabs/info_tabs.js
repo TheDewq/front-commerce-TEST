@@ -6,6 +6,7 @@ import { useAuth } from "@/hooks";
 import { useRouter } from "next/navigation";
 import Settings from "../settings/settings";
 import { Tabs, Tab, TabPanel, TabList, TabPanels } from "@chakra-ui/react";
+import Address from "../address/address";
 
 export default function InfoTabs(props){
     const [toggle, setToggle] = useState(0)
@@ -33,7 +34,7 @@ export default function InfoTabs(props){
                 <p>one!</p>
                 </TabPanel>
                 <TabPanel>
-                <p>two!</p>
+                    <Address/>
                 </TabPanel>
                 <TabPanel>
                     <Settings/>
