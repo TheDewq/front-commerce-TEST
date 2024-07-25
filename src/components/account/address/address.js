@@ -1,21 +1,19 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Divider } from "@chakra-ui/react";
 import AddressModal from "./address_modal/address_modal";
-import { useAuth } from "@/hooks";
-import { Address as ApiAddress } from "@/api/address";
+import AddressList from "./address_list/address_list";
+import { useState } from "react";
 
 export default function Address(){
-    const {user} = useAuth();
-    const dirCtrl = new ApiAddress()
-    try {
-        console.log(dirCtrl.getAllbyId(user.id))
-    } catch (error) {
-        console.log(error)
+    const [reload, setReload] = useState(false);
+    const onReload = ()=>{
+        setReload(!reload)
     }
-    
     return(
         <>
             <Box>
-                <AddressModal/>
+                <AddressModal onReload={onReload}/>
+                <Divider px={1}/>
+                <AddressList reload={reload} onReload={onReload}/>
             </Box>
         </>
     )

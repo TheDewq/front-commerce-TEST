@@ -17,8 +17,7 @@ export default function Account(){
         <>
             <MainLayout>
                 <BasicInfo/>
-                <InfoTabs></InfoTabs>
-               
+                <InfoTabs/>
             </MainLayout>
             
         </>
