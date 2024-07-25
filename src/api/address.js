@@ -24,18 +24,25 @@ export class Address{
             const url = ENV.API_URL+"/"+ENV.ENDPOINTS.ADDRESS.GETALL
 
             const method = "POST";
+            const data_parsed = {
+                data: {
+                name: data.name,
+                dir: data.dir,
+                city: data.city,
+                department: data.department,
+                phone1: data.phone1,
+                phone2: data?.phone2 ?? "",
+                zipcode: data.zipcode,
+                Details: data?.Details ?? "",
+                user: id
+            }
+            }
             const params = {
-                "data": {
-                    "name": data.name,
-                    "dir": data.dir,
-                    "city": data.city,
-                    "department": data.department,
-                    "phone1": data.phone1,
-                    "phone2": data?.phone2 ?? "",
-                    "zipcode": data.zipcode,
-                    "Details": data?.Details ?? "",
-                    "user": id
-                }
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data_parsed)
+                
             }
 
             const response = await authFetch(url, method, params);
