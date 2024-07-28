@@ -5,19 +5,23 @@ import { Address as ApiAddress } from "@/api/address";
 import { useAuth } from "@/hooks";
 
 export default function AddressForm(props){
-    const {Close, onReload} = props;
+    const {Close, onReload, data=null, id=null} = props;
     const { user } = useAuth();
 
     const formik = useFormik({
-        initialValues: initialValues(),
+        initialValues: initialValues(data),
         validationSchema: validationSchema(),
         validateOnChange: false,
         onSubmit: async (formValue)=>{
             try {
                 const dirCtrl = new ApiAddress()
-                console.log(await dirCtrl.createOne(user.id, formValue))
+                if(data !== null && id !== null){
+                    console.log(await dirCtrl.UpdateById(id, formValue))
+                }else{
+                    await dirCtrl.createOne(user.id, formValue);
+                }
                 console.log("direccion enviada");
-                onReload();
+                    onReload();
             } catch (error) {
                 console.error(error)
             }

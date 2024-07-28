@@ -13,6 +13,8 @@ import AddressForm from './address_form';
 export default function AddressModal(props){
     
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const {id=null, data=null} = props;
+
     return(
         <>
         <Button onClick={onOpen}>Agregar Direccion</Button>
@@ -20,10 +22,10 @@ export default function AddressModal(props){
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>Agregar direccion</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-                <AddressForm Close={onClose} onReload={props.onReload}/>
+                <AddressForm Close={onClose} onReload={props.onReload} id={id} data={data} />
             </ModalBody>
 
             </ModalContent>
