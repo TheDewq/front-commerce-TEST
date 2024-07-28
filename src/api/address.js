@@ -94,4 +94,28 @@ export class Address{
             throw error;
         }
     }
+    async DeleteOne(id){
+        try {
+            const url = ENV.API_URL+"/"+ENV.ENDPOINTS.ADDRESS.GETALL+"/"+id
+
+            const method = "DELETE";
+
+            const params = {
+                headers: {
+                    "Content-Type": "application/json",
+                }
+                
+            }
+
+            const response = await authFetch(url, method, params);
+            const result = await response.json();
+
+            if(response.status !== 200) throw result;
+            console.log("este es el resultado");
+            console.log(result)
+            return result;
+        } catch (error) {
+            throw error;
+        }
+    }
 }

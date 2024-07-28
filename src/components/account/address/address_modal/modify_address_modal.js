@@ -21,7 +21,7 @@ export default function ModifyAddressModal(props){
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
-            <ModalHeader>Agregar direccion</ModalHeader>
+            <ModalHeader>Modificar direccion</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
                 <AddressForm Close={onClose} onReload={props.onReload} id={id} data={data}/>

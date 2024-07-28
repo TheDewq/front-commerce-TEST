@@ -1,7 +1,8 @@
 import { Button, Divider, Heading } from "@chakra-ui/react";
 import styles from "./address_list.module.scss";
-import AddressForm from "../address_modal/address_form";
 import ModifyAddressModal from "../address_modal/modify_address_modal";
+import AddressDelete from "../address_delete/address_delete";
+
 export default function AddressItem(props){
     const{id, data, onReload} = props;
     return(
@@ -15,7 +16,7 @@ export default function AddressItem(props){
                 </div>
                 <div className={styles.right}>
                     <ModifyAddressModal id={id} data={data} onReload={onReload}/>
-                    <i class="bi bi-trash3"></i>
+                    <AddressDelete id={id} onReload={onReload}/>
                 </div>
                 
                 
