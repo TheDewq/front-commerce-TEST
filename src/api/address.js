@@ -57,7 +57,7 @@ export class Address{
         }
     }
 
-    async UpdateById(id, data){
+    async UpdateById(id, userid, data){
         try {
             const url = ENV.API_URL+"/"+ENV.ENDPOINTS.ADDRESS.GETALL+"/"+id
 
@@ -72,7 +72,7 @@ export class Address{
                 phone2: data?.phone2 ?? "",
                 zipcode: data.zipcode,
                 Details: data?.Details ?? "",
-                user: id
+                user: userid
             }
             }
             const params = {

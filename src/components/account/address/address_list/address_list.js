@@ -3,6 +3,7 @@ import { Address as ApiAddress } from "@/api/address";
 import { useAuth } from "@/hooks";
 import { add, map } from "lodash";
 import AddressItem from "./address_item";
+import AddressModal from "../address_modal/new_address_modal";
 
 export default function AddressList(props){
     const { reload, onReload } = props;
@@ -38,14 +39,9 @@ export default function AddressList(props){
         {addresses && addresses.length > 0 ? (
             addresses.map((element, index) => (
                     <AddressItem
-                        name={element.attributes.name}
-                        city={element.attributes.city}
-                        department={element.attributes.department}
-                        phone1={element.attributes.phone1}
-                        phone2={element.attributes.phone2}
-                        zipcode={element.attributes.zipcode}
-
+                        data={element.attributes}
                         id={element.id}
+                        onReload={onReload}
                     />
                 ))
             ) : (

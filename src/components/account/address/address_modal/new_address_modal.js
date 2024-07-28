@@ -10,10 +10,9 @@ import {
 
   import { useDisclosure, Button } from '@chakra-ui/react';
 import AddressForm from './address_form';
-export default function AddressModal(props){
+export default function NewAddressModal(props){
     
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const {id=null, data=null} = props;
 
     return(
         <>
@@ -25,7 +24,7 @@ export default function AddressModal(props){
             <ModalHeader>Agregar direccion</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-                <AddressForm Close={onClose} onReload={props.onReload} id={id} data={data} />
+                <AddressForm Close={onClose} onReload={props.onReload}/>
             </ModalBody>
 
             </ModalContent>

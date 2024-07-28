@@ -16,12 +16,13 @@ export default function AddressForm(props){
             try {
                 const dirCtrl = new ApiAddress()
                 if(data !== null && id !== null){
-                    console.log(await dirCtrl.UpdateById(id, formValue))
+                    console.log(await dirCtrl.UpdateById(id, user.id, formValue))
+                    console.log("modified");
                 }else{
                     await dirCtrl.createOne(user.id, formValue);
                 }
                 console.log("direccion enviada");
-                    onReload();
+                onReload();
             } catch (error) {
                 console.error(error)
             }
