@@ -125,8 +125,8 @@ export default function AddressForm(props){
                         />
                     </Box>
                 </InputGroup>
-                <InputGroup>
-                    <Button type="submit">Confirmar</Button>
+                <InputGroup m={1}>
+                    <Button me={1} type="submit">Confirmar</Button>
                     <Button onClick={Close}>Cancelar</Button>
                 </InputGroup>
             </form>

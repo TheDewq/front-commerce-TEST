@@ -15,6 +15,9 @@ export const ENV ={
         },
         ADDRESS :{
             GETALL: "addresses"
+        },
+        BANNER :{
+            GETONE: "banners"
         }
     },
     TOKEN: "token"
